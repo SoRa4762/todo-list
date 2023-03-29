@@ -1,11 +1,13 @@
 import React from "react";
 import { ITask } from "../Interfaces";
 
+//setting rules for the array and function that we get from the App.tsx
 interface Props {
   displayT: ITask;
   completeTask(taskNameToDelete: string): void;
 }
 
+//implementing interface to the props that we got
 const ToDoTask = ({ displayT, completeTask }: Props) => {
   return (
     <div className="task">
@@ -16,6 +18,7 @@ const ToDoTask = ({ displayT, completeTask }: Props) => {
       </div>
       <button
         onClick={() => {
+          //passing value to the function so that we can execute it
           completeTask(displayT.taskName);
         }}
       >

@@ -20,14 +20,16 @@ const App: FC = () => {
     //!i cannot do this because HTMLInputElements donot support "key" event
   };
 
+  //adding values to the array of setTodoList because we cannot add it otherwise, becasue it is not JS but TS
   const addTask = (): void => {
-    const newTask = { taskName: task, deadline: deadline };
+    const newTask = { taskName: task, deadline: deadline }; //*we didnt need this in JSX but here we need this becasue we need to tell it that these are actually legit values that satisfies our requirement
     setTodoList([...todoList, newTask]);
     setTask("");
     setDeadline(0);
-    console.log(todoList);
+    // console.log(todoList);
   };
 
+  //this is a function that will be called by the to do list section to remove the list OFC!
   const completeTask = (taskNameToDelete: string): void => {
     setTodoList(
       todoList.filter((removeTask) => {
@@ -42,7 +44,7 @@ const App: FC = () => {
         <div className="inputContainer">
           <input
             type="text"
-            name="task"
+            name="task" //added name because we need it for narrowing the variables through if else
             placeholder="Task"
             onChange={handleChange}
             value={task}
@@ -58,12 +60,13 @@ const App: FC = () => {
         <button onClick={addTask}>Add task</button>
       </div>
       <div className="todoList">
+        {/* we have mapped the array of the setTodoList to here so we can check it thorugh TS and then pass it the props to ToToTask which will display our values there */}
         {todoList.map((displayTask: ITask, key: number) => {
           return (
             <ToDoTask
               key={key}
-              displayT={displayTask}
-              completeTask={completeTask}
+              displayT={displayTask} //this just passes the values to the other side
+              completeTask={completeTask} //this passes the remove function to the other side
             />
           );
         })}
