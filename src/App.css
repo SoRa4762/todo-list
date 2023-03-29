@@ -1,38 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Delicious Handrawn", cursive, "Rubik", "Roboto", "Outfit";
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  flex: 2;
+  background-color: tomato;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header .inputContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.header input {
+  width: 400px;
+  /* height: 40px; */
+  border: none;
+  /* color: rgb(41, 210, 210); */
+  background-color: white;
+  border-radius: 8px 0 0 8px;
+  padding: 1rem;
+  border: 1px solid black;
+  font-size: 18px;
+}
+
+.header button {
+  height: 112px;
+  /* width: 70px; */
+  background-color: rgb(80, 255, 80);
+  border: 1px solid black;
+  border-radius: 0 1rem 1rem 0;
+  border-left: none;
+  font-size: 18px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background-color: rgb(3, 214, 3);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todoList {
+  flex: 3;
+  width: 100%;
+  background-color: rgb(41, 210, 210);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task {
+  display: flex;
+  border-radius: 1rem;
+  padding-top: 1rem;
+  width: 500px;
+}
+
+.task button {
+  border: 1px solid black;
+  border-radius: 0 1rem 1rem 0;
+  padding: 1rem 1.7rem 1rem;
+  background-color: tomato;
+  color: white;
+  text-align: center;
+  border-left: none;
+}
+
+.task button:hover {
+  background-color: rgb(255, 38, 0);
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex: 80%;
+  gap: 10px;
+  font-size: 18px;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.content span {
+  width: 100%;
+  text-align: center;
+  /* font-size: 18px; */
+  /* border-right: 1px solid black; */
 }
