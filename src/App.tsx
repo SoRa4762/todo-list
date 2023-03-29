@@ -8,7 +8,9 @@ const App: FC = () => {
   const [deadline, setDeadline] = useState<number>(0);
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
+  //setting a type
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    //narrowing
     if (e.target.name === "task") {
       setTask(e.target.value);
     } else if (e.target.name === "deadline") {
